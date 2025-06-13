@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-Shan Fansub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class'
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff0f5;
+      }
+      .barra-color {
+        height: 6px;
+      }
+    </style>
+  </head>
+  <body class="transition-colors duration-300 dark:bg-[#1a1a1a] dark:text-white">
+    <!-- Barras decorativas -->
+    <div class="barra-color bg-pink-300"></div>
+    <div class="barra-color bg-pink-400"></div>
+    <div class="barra-color bg-pink-500"></div>
+
+    <!-- Navbar personalizada -->
+    <nav class="flex flex-wrap items-center justify-between px-6 py-4 bg-white dark:bg-[#121212] shadow">
+      <div class="flex items-center gap-4">
+        <span class="text-xl font-bold text-pink-500">K-Shan Lecturas</span>
+        <a href="#" class="hover:text-pink-500">Inicio</a>
+        <a href="#" class="hover:text-pink-500">Proyectos</a>
+        <a href="#" class="hover:text-pink-500">Favoritos</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <input id="busqueda" type="text" placeholder="Buscar proyecto..." class="px-2 py-1 border rounded" />
+        <button onclick="toggleDarkMode()" class="bg-pink-500 text-white px-3 py-1 rounded">🌙/☀️</button>
+      </div>
+    </nav>
+
+    <!-- Contenido -->
+    <main class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="contenedor-proyectos">
+      <!-- Proyectos se cargan aquí -->
+    </main>
+
+    <script>
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+
+      async function cargarProyectos() {
+        try {
+          const res = await fetch('proyectos.json');
+          const proyectos = await res.json();
+          const contenedor = document.getElementById('contenedor-proyectos');
+          const inputBusqueda = document.getElementById('busqueda');
+
+          const render = (filtro = '') => {
+            contenedor.innerHTML = '';
+            proyectos
+              .filter(p => p.titulo.toLowerCase().includes(filtro.toLowerCase()))
+              .forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'bg-white dark:bg-[#2a2a2a] p-4 rounded shadow hover:shadow-lg transition';
+                div.innerHTML = `
+                  <a href="manhwa.html?id=${p.id}">
+                    <img src="${p.portada}" alt="${p.titulo}" class="w-full h-64 object-cover rounded" />
+                    <h3 class="text-lg font-semibold mt-2 text-pink-500">${p.titulo}</h3>
+                    <p class="text-sm">${p.descripcion.substring(0, 100)}...</p>
+                  </a>
+                `;
+                contenedor.appendChild(div);
+              });
+          };
+
+          render();
+          inputBusqueda.addEventListener('input', e => render(e.target.value));
+        } catch (err) {
+          console.error('Error cargando proyectos:', err);
+        }
+      }
+
+      cargarProyectos();
+    </script>
+  </body>
+</html>

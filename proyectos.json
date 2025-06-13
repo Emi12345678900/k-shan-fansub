@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "titulo": "Olgami",
+    "portada": "https://zonamiau.com/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-17-at-09.32.13.jpeg",
+    "descripcion": "La taxista Chae-ah vio una vez aún conocido de la iglesia, Park Yoonsoo, caminando por las calles de la ciudad con una chica, pero no podía ni pensar que esto llevaría a enterrar las pruebas del asesinato, a la persecución y a un cambio completo en su estilo de vida diario...",
+    "estado": "En progreso",
+    "tipo": "Manhwa",
+    "generos": ["Suspenso", "Drama"],
+    "categoria": ["Populares", "Últimos subidos","Actualizaciones"],
+    "capitulos": [
+      {"num": 1, "fecha": "2025-05-01"},
+      {"num": 2, "fecha": "2025-05-01"},
+      {"num": 3, "fecha": "2025-06-01"}
+  },
+  {
+    "id": 2,
+    "titulo": "Mirada Perturbada",
+    "portada": "https://xeo.manhwa-latino.com/wp-content/uploads/2024/03/63cc214732d67-32546.webp",
+    "descripcion": "Dahye y Dawoon son hermanos que viven juntos con sus padres. Su relación es un poco inestable ya que Dawoon siempre ha sido el favorito de sus padres y Dahye tiene cierto resentimiento hacia él. Dawoon, que abandonó la escuela secundaria, siempre está en su habitación jugando. Dahye comienza a notar que está actuando de manera extraña y, después de encontrar una historia inquietante en la computadora de su hermano, comienza a temerle a él y a lo que podría ser capaz de hacer. Entonces solicita la ayuda de su tía y su mejor amiga para tratar de averiguar qué le pasa a Dawoon.",
+    "estado": "En progreso",
+    "tipo": "Manhwa",
+    "generos": ["Suspenso", "Drama"],
+    "categoria": ["Populares", "Últimos subidos", "Actualizaciones"],
+  },
+  {
+    "id": 3,
+    "titulo": "Alguien ha poseído mi cuerpo",
+    "portada": "https://via.placeholder.com/200x300?text=Poseído",
+    "descripcion": "Un cuerpo, dos almas. ¿Qué puede salir mal?",
+    "estado": "En progreso",
+    "tipo": "Manhwa",
+    "generos": ["Suspenso", "Drama"],
+    "categoria": "Populares"
+  }
+]
+
